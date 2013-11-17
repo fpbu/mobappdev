@@ -2,11 +2,6 @@
 // Set the event listener to run when the device is ready
 document.addEventListener("deviceready", onDeviceReady, false);
 //after device is start getting data
-var maxTime = 10,
-    countdownInt = 3,
-    src,
-    audioRecording,
-    stopRecording;
 
 function onDeviceReady() {
     watchGeo();
@@ -58,7 +53,9 @@ function onAccError() {
 
 function watchGeo(){
         navigator.geolocation.watchPosition(onSuccess, onError,
-                                            {maximumAge: 5000, timeout: 15000, enableHighAccuracy: true}
+                                            {maximumAge: 5000, 
+                                             timeout: 15000, 
+                                             enableHighAccuracy: true}
                                        );}
 
 // after successful transaction display the position data
@@ -112,11 +109,13 @@ function onError(error) {
        }
 
 //////////////////////////////////////////////////
-
-
-
-
-////////////////////////////////
+// AUDIO NOTE RECORDER
+//////////////////////////////////////////////////
+var maxTime = 10,
+    countdownInt = 3,
+    src,
+    audioRecording,
+    stopRecording;
 
 function recordPrepare() {
            $('#record').unbind();
@@ -135,7 +134,8 @@ function recordAudio() {
        src = 'recording_' + Math.round(new Date().getTime()/1000) + '.mp3';
        audioRecording = new Media(src, onAudioSuccess, onAudioError);
        var startCountdown = setInterval(function() {
-           $('#message').html('Recording will start in ' + countdownInt + ' seconds...');
+           $('#message').html('Recording will start in ' + 
+                              countdownInt + ' seconds...');
            countdownInt = countdownInt -1;
            if(countdownInt <= 0) {
                countdownInt = 3;
@@ -162,7 +162,5 @@ function onAudioSuccess() {
     $('#message').html('Audio Note created!:<br />' + src);
 }
 function onAudioError(error) {
-    $('#message').html('code: ' + error.code
-+ '\n' +
-'message: ' + error.message + '\n');
+    $('#message').html('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
     }
