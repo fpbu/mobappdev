@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.SampleImg"
+        versionCode="10" 
+        version   = "1.1.0">
+
+    <!-- versionCode is optional and Android only -->
+        
+    <name>BU-GEOCAM</name>
+    
+    <preference name="phonegap-version" value="3.0.0" />
+
+    <description>
+        Workshop Test App
+        </description>
+
+    <author href="https://build.phonegap.com" email="myemail@somedomain.com">
+        Your Name Here
+    </author>
+        
+    <!-- to enable individual permissions use the following examples -->
+    <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/contacts"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+    
+    <!-- enable phonegap plugins here: (https://build.phonegap.com/plugins) -->
+
+    <gap:plugin name="org.apache.cordova.core.geolocation" />
+    <gap:plugin name="org.apache.cordova.core.device-motion" />
+    <gap:plugin name="org.apache.cordova.core.camera" />
+    <gap:plugin name="org.apache.cordova.core.file" />
+    <gap:plugin name="org.apache.cordova.core.media" />
+    <gap:plugin name="org.apache.cordova.core.contacts" />
+
+</widget>
