@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TraceRoute</title>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="geolocation.js"></script>
+    <script type="text/javascript" src="camera.js"></script>
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="jquery.mobile-1.3.2.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.css" />
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" charset="utf-8"> </script>
+    
+    </head>
+
+    <body>
+
+    <div data-role="page" id="home">
+    <div data-role="header"><h1>FOO BAZ BAR</h1></div>
+    <div data-role="header"><h1>HOME</h1>
+        <div data-role="navbar">
+        <ul>
+            <li><a href="#home" data-transition="none" data-icon="home">HOME</a></li>
+            <li><a href="#acc" data-transition="none" data-icon="plus">ACC</a></li>
+            <li><a href="#geo" data-transition="none" data-icon="star">GEO</a></li>
+            <li><a href="#cam" data-transition="none" data-icon="star">CAM</a></li>    
+        </ul>
+        </div>
+        </div>
+    <div data-role="content">
+        <p>Welcome to the <em>FooBazBar</em> app.</p>
+        <button id="home_network_button" data-icon="check">Internet Access Enabled</button>
+    </div>
+    </div>
+        
+    <div data-role="page" id="acc">        
+    <div data-role="header"><h1>FOO BAZ BAR</h1></div>
+        <div data-role="header">
+            <h1>ACC</h1>
+            <div data-role="navbar">
+       <ul>
+            <li><a href="#home" data-transition="none" data-icon="home">HOME</a></li>
+            <li><a href="#acc" data-transition="none" data-icon="plus">ACC</a></li>
+            <li><a href="#geo" data-transition="none" data-icon="star">GEO</a></li>
+            <li><a href="#cam" data-transition="none" data-icon="star">CAM</a></li>    
+        </ul>
+            </div>
+        </div>
+        <div data-role="content">
+        <h1>ACCELEROMETER</h1>
+            <button id="startBtn" onclick="startWatch()">start</button>
+            <button id="stopBtn" onclick="stopWatch()">stop</button>
+            <div id="accelerometerData">waiting for sensor...</div>
+            </div>
+        </div>
+
+        <div data-role="page" id="geo">
+            <div data-role="header"><h1>FOO BAZ BAR</h1></div>
+            <div data-role="header">
+                <h1>GEO</h1>
+                <div data-role="navbar"> 
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home">HOME</a></li>
+                        <li><a href="#acc" data-transition="none" data-icon="plus">ACC</a></li>
+                        <li><a href="#geo" data-transition="none" data-icon="star">GEO</a></li>
+                        <li><a href="#cam" data-transition="none" data-icon="star">CAM</a></li>    
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content">
+            <h1>GEO DATA</h1>
+            <div id="geolocationData">Waiting for GPS...</div>      
+            </div>   
+            </div>
+            
+        <div data-role="page" id="cam">
+        
+        <div data-role="header"><h1>FOO BAZ BAR</h1></div>
+        <div data-role="header">
+            <h1>CAM</h1>
+            <div data-role="navbar">
+       <ul>
+            <li><a href="#home" data-transition="none" data-icon="home">HOME</a></li>
+            <li><a href="#acc" data-transition="none" data-icon="plus">ACC</a></li>
+            <li><a href="#geo" data-transition="none" data-icon="star">GEO</a></li>
+            <li><a href="#cam" data-transition="none" data-icon="star">CAM</a></li>    
+        </ul>
+
+                </ul>
+            </div>
+        </div>
+
+    <div data-role="content"> 
+        <h1>CAPTURE</h1>
+        foo baz bar
+        </div>
+    </div> 
+    
+    
+    </body>
+</html>

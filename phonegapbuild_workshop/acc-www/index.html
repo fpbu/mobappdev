@@ -1,39 +1,39 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8" />
 <!-- app specific settings -->        
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,     width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,     
+                                       width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <!-- link to local and jquery mobile css-->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
 <!--link to jquery and jquery mobile javascript files-->
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-<!--do not include this file locally - it is injected automagically by phonegap build on the server -->
-<!--
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>     
+        <!--do not include this file locally - it is injected automagically by phonegap build on the server -->
         <script type="text/javascript" src="phonegap.js"></script>
--->
-
-<!-- You may want to uncomment a reference to a local cordova.js file for local emulation.-->
-        <script type="text/javascript" src="cordova.js"/>
+        <!-- You may want to uncomment a reference to a local cordova.js file for local emulation.-->
+        <!-- <script type="text/javascript" src="cordova.js"/> -->
 
         <script type="text/javascript">
-              function onDeviceReady() {
-                alert("ok lets go! device ready");
-              }
+            document.addEventListener("deviceready", onDeviceReady, false);
             
-            // Watch the acceleration at regular
-            // intervals as set by the frequency
+            function onDeviceReady() { 
+                navigator.splashscreen.hide();
+                //alert("ok lets go! device ready");
+                startWatch();  
+            }
+            
+            // Poll the accelerometer at intervals
             function startWatch() {
-                alert("startwatch");
+                //alert("startwatch");
                 // Set the frequency of updates
                 // from the acceleration
                 var options = { frequency: 300 };
-                // Set attributes for control buttons
-                document.getElementById('startBtn').disabled = true;
+                
+                document.getElementById('startBtn').disabled = true;// Set attributes for buttons
                 document.getElementById('stopBtn').disabled = false;
                 // Assign watchAcceleration to the watchID variable
                 // and pass through the options array
@@ -45,12 +45,9 @@
                 if (watchID) {
                     navigator.accelerometer.clearWatch(watchID);
                     watchID = null;
-                    var element =
-                    document.getElementById('accelerometerData');
-                    element.innerHTML =
-                    'No longer watching your acceleration.'
-                    // Set attributes for control buttons
-                    document.getElementById('startBtn').disabled = false;            
+                    var element = document.getElementById('accelerometerData');
+                    element.innerHTML = 'Polling Accelerometer: OFF.'
+                    document.getElementById('startBtn').disabled = false; // Set attributes for control buttons
                     document.getElementById('stopBtn').disabled = true;
                 }
             }
@@ -65,49 +62,31 @@
                                     'Timestamp: ' + acceleration.timestamp + '<br />';
             }
             
-            // Run if we face an error
-            // obtaining the accelerometer data
+            // Run if we get an error accessing sensor data
             function onError() {
-                    alert("onError");
-                // Handle any errors we may face
                 var element = document.getElementById('accelerometerData');
-                element.innerHTML = 'Sorry, I was unable to access the acceleration data.';
+                element.innerHTML = 'unable to access sensor data...';
             }
-
-        // The device is ready so let's
-
-            //    startWatch();
-
-            
-
-            document.addEventListener("deviceready", onDeviceReady, false);
-            
+   
         </script>
         
-<!--        <script type="text/javascript">
-            // Set the event listener to run
-            // when the device is ready
-            document.addEventListener("deviceready", onDeviceReady, false);
-        </script>-->
-        
         <!-- put the app name here -->
-        <title>Foo Baz Bar</title>
+        <title>Accelerometer Demo</title>
     </head>
     
-    <body >
-    
+    <body onload='' >
+        
             <div data-role="page"> 
-		      <div data-role="header">Foo Baz Bar</div> 
-		          <div data-role="content" id="cont">            
+		      <div data-role="header">Accelerometer Demo</div> 
+		          <div data-role="content">            
                 
-                      <h1>Accelerometer Data</h1>
+                      <h1>Accelerometer</h1>
                         <button id="startBtn" onclick="startWatch()">start</button>
                         <button id="stopBtn" onclick="stopWatch()">stop</button>
-                        <div id="accelerometerData">Obtaining data...</div>
+                        <div id="accelerometerData">waiting for sensor...</div>
                     </div>     
  
-                
-                <div id="foot" data-role="footer">...</div> 
+                <div data-role="footer" data-position="fixed">copyleft 2013 foo baz bar</div> 
             </div> 
 
   <!--              <script type="text/javascript">
