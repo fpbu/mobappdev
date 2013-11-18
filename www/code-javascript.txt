@@ -1,4 +1,8 @@
 //////////////////////////////////
+
+---------------------------------------------------------------------
+
+
 // Set the event listener to run when the device is ready
 document.addEventListener("deviceready", onDeviceReady, false);
 //after device is start getting data
@@ -8,6 +12,11 @@ function onDeviceReady() {
     //watchAcc();
     recordPrepare();
 }  
+
+
+---------------------------------------------------------------------
+
+// accelerometer code
 //////////////////////////////////
 
 // Poll the accelerometer at intervals
@@ -19,7 +28,6 @@ function watchAcc() {
     // and pass through the options array
     watchID = navigator.accelerometer.watchAcceleration(onAccSuccess, onAccError, options);
 }
-
 // Stop watching the accelerometer
 function stopWatch() {
     if (watchID) {
@@ -29,6 +37,7 @@ function stopWatch() {
         element.innerHTML = 'Polling Accelerometer: OFF.';
     }
 }
+
 
 // Run after successful transaction
 // Let's display the accelerometer data
@@ -45,6 +54,9 @@ function onAccError() {
     var element = document.getElementById('accelerometerData');
     element.innerHTML = 'unable to access sensor data...';
 }
+
+
+---------------------------------------------------------------------
 
 
 /////////////////////////////////////////////////////
@@ -108,6 +120,11 @@ function onError(error) {
           element.innerHTML = errString;
        }
 
+
+---------------------------------------------------------------------
+
+
+
 //////////////////////////////////////////////////
 // 10" AUDIO SNIPPET RECORDER
 //////////////////////////////////////////////////
@@ -165,3 +182,6 @@ function onAudioSuccess() {
 function onAudioError(error) {
     $('#message').html('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
     }
+
+
+---------------------------------------------------------------------

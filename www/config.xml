@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.SampleImg"
+        id        = "com.phonegap.appname"
         versionCode="10" 
         version   = "1.1.0">
 
     <!-- versionCode is optional and Android only -->
         
-    <name>BU-GEOCAM</name>
+    <name>APP_NAME_HERE</name>
     
     <preference name="phonegap-version" value="3.0.0" />
 
@@ -16,8 +16,8 @@
         </description>
 
     <author href="https://build.phonegap.com" email="myemail@somedomain.com">
-        Your Name Here
-    </author>
+        YOUR NAME HERE
+        </author>
         
     <!-- to enable individual permissions use the following examples -->
     <feature name="http://api.phonegap.com/1.0/battery"/>
